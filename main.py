@@ -4,7 +4,7 @@ from nltk.tokenize import PunktSentenceTokenizer as punk
 from api import *
 
 file_name = " FILENAME.txt "  #FILENAME with .txt
-htmlname  = " HTMLNAME "      #HTML name without .html
+htmlname  = " HTMLNAME "      #Target HTML name without .html
 
 ################# Functions #####################
 def readfile(file):
@@ -13,7 +13,8 @@ def readfile(file):
             sample_text=f.read()
         
     except:
-        sample_text="File"
+        print("Input File could not be found!")
+        sample_text="File"          #If the file specified could not be found
     return sample_text
 
 def printtokenlist(tokened): #input sentence-tokenized list
