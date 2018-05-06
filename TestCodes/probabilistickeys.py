@@ -57,12 +57,12 @@ class KeyFilter:
             di[i.lower()] += 1
         return di
 
-    def unstemmedKeys(self,string):
+    def unstemmedKeys(self,string):     #Returns unstemmed keys with more occurences than the threshold value
         words = KeyFilter.stopfilter(self.tokenize(string))
         count = KeyFilter.counts(words)
         return [w for w in count if count[w]>self.threshold]
 
-    def stemmedKeys(self,string):
+    def stemmedKeys(self,string):       #Returns stemmed keys with more occurences than the threshold value
         words = KeyFilter.stopfilter(self.tokenize(string))
         count = KeyFilter.counts(map(self.stemmer.stem,words))
         return [w for w in count if count[w]>self.threshold]
