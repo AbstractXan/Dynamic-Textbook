@@ -1,0 +1,5 @@
+Using Probabilistic Keys:
+
+Initialize KeyFilter object -> newFilter = KeyFilter([threshold])
+For unstemmed keywords, use newFilter.unstemmedkeys(sample_string) -> list of keywords
+For stemmed keywords(use with caution), use newFilter.stemmedkeys(sample_string) -> list of keywords
